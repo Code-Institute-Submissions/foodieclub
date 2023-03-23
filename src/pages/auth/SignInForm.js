@@ -14,7 +14,7 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-import logo from "../../assets/foodieclub.logo.png";
+import logo from "../../assets/signin.logo.jpg"
 
 function SignInForm() {
   const [signInData, setSignInData] = useState({
