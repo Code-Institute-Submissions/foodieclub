@@ -10,3 +10,7 @@
 .Active i {
   color: #9d1212;
 }
+
+.NavLink:hover {
+  color: black;
+}
