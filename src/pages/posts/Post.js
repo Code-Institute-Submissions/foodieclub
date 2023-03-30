@@ -127,6 +127,12 @@ const Post = (props) => {
             <i className="far fa-comments" />
           </Link>
           {comments_count}
+          <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>Log in to view the recipe!</Tooltip>}
+            >
+              <i className="fa-solid fa-kitchen-set" />
+            </OverlayTrigger>
         </div>
       </Card.Body>
     </Card>
