@@ -124,15 +124,12 @@ const Post = (props) => {
           )}
           {likes_count}
           <Link to={`/posts/${id}`}>
+            <i className="fa-solid fa-fire-burner" />
+          </Link>
+          <Link to={`/posts/${id}`}>
             <i className="far fa-comments" />
           </Link>
           {comments_count}
-          <OverlayTrigger
-              placement="top"
-              overlay={<Tooltip>Log in to view the recipe!</Tooltip>}
-            >
-              <i className="fa-solid fa-kitchen-set" />
-            </OverlayTrigger>
         </div>
       </Card.Body>
     </Card>
