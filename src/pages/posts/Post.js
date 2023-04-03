@@ -74,34 +74,34 @@ const Post = (props) => {
     }
   };
 
-  const handleFavorites = async () => {
+  const handleFavorite = async () => {
     try {
-        const {data} = await axiosRes.post('/favorites/', {post:id})
-        setPosts((prevPosts) => ({
-            ...prevPosts,
-            results: prevPosts.results.map((post) => {
-                return post.id === id
-                ? {...post, favorites_id: data.id}
-                : post
-            }),
-        }))
-    } catch(err) {
-      console.log(err)
+      const { data } = await axiosRes.post('/favorites/', { post: id });
+      setPosts((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id
+            ? { ...post, favorites_id: data.id }
+            : post;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
     }
-  }
+  };
 
-  const handleNofavorites = async () => {
+  const handleNofavorite = async () => {
     try {
-        await axiosRes.delete(`/favorites/${favorites_id}`)
-        setPosts((prevPosts) => ({
-            ...prevPosts,
-            results: prevPosts.results.map((post) => {
-                return post.id === id
-                ? {...post, favorites_id: null}
-                : post
-            }),
-        }))
-    } catch(err) {
+      await axiosRes.delete(`/favorites/${favorites_id}`);
+      setPosts((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id
+            ? { ...post, favorites_id: null }
+            : post;
+        }),
+      }));
+    } catch (err) {
       console.log(err)
     }
   }
@@ -163,22 +163,28 @@ const Post = (props) => {
             <i className="far fa-comments" />
           </Link>
           {comments_count}
-            {is_owner ? (
-                <OverlayTrigger placement="top" overlay={<Tooltip>You cannot save as favorite your own post!</Tooltip>}>
-                    <i className="far fa-bookmark" />
-                </OverlayTrigger>
-            ) : favorites_id ? (
-                <span onClick={handleNofavorites}>
-                    <i className={`fas fa-bookmark ${styles.Heart}`} />
-                </span>
-            ) : currentUser ? (
-                <span onClick={handleFavorites}>
-                    <i className={`far fa-bookmark ${styles.HeartOutline}`} />
-                </span>
-            ) : (
-                <OverlayTrigger placement="top" overlay={<Tooltip>You must be signed in to save as favorite!</Tooltip>}>
-                    <i className="far fa-bookmark" />
-                </OverlayTrigger>
+          {is_owner ? (
+            <OverlayTrigger 
+              placement="top" 
+              overlay={<Tooltip>You can't save as favorite your own post!</Tooltip>}
+            >
+              <i className="far fa-bookmark" />
+            </OverlayTrigger>
+          ) : favorites_id ? (
+            <span onClick={handleNofavorite}>
+              <i className={`fas fa-bookmark ${styles.Heart}`} />
+            </span>
+          ) : currentUser ? (
+            <span onClick={handleFavorite}>
+              <i className={`far fa-bookmark ${styles.HeartOutline}`} />
+            </span>
+          ) : (
+            <OverlayTrigger
+             placement="top" 
+             overlay={<Tooltip>You must be signed in to save as favorite!</Tooltip>}
+            >
+              <i className="far fa-bookmark" />
+            </OverlayTrigger>
             )}
         </div>
       </Card.Body>

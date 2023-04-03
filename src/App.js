@@ -51,8 +51,8 @@ function App() {
             exact
             path="/favorites"
             render={() => (
-              <PostPage
-                message="No results found :( Try a different search or save a post"
+              <PostsPage
+                message="No results found. Adjust the search keyword or like a post."
                 filter={`favorites__owner__profile=${profile_id}&ordering=-favorites__created_at&`}
               />
             )}
