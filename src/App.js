@@ -47,6 +47,16 @@ function App() {
               />
             )}
           />
+          <Route
+            exact
+            path="/favorites"
+            render={() => (
+              <PostPage
+                message="No results found :( Try a different search or save a post"
+                filter={`favorites__owner__profile=${profile_id}&ordering=-favorites__created_at&`}
+              />
+            )}
+          />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
