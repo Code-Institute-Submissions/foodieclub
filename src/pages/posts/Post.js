@@ -16,6 +16,7 @@ const Post = (props) => {
     comments_count,
     likes_count,
     like_id,
+    favorites_id,
     title,
     content,
     image,
@@ -72,6 +73,38 @@ const Post = (props) => {
       console.log(err);
     }
   };
+
+  const handleFavorites = async () => {
+    try {
+        const {data} = await axiosRes.post('/favorites/', {post:id})
+        setPosts((prevPosts) => ({
+            ...prevPosts,
+            results: prevPosts.results.map((post) => {
+                return post.id === id
+                ? {...post, favorites_id: data.id}
+                : post
+            }),
+        }))
+    } catch(err) {
+      console.log(err)
+    }
+  }
+
+  const handleNofavorites = async () => {
+    try {
+        await axiosRes.delete(`/favorites/${favorites_id}`)
+        setPosts((prevPosts) => ({
+            ...prevPosts,
+            results: prevPosts.results.map((post) => {
+                return post.id === id
+                ? {...post, favorites_id: null}
+                : post
+            }),
+        }))
+    } catch(err) {
+      console.log(err)
+    }
+  }
 
   return (
     <Card className={styles.Post}>
@@ -130,6 +163,23 @@ const Post = (props) => {
             <i className="far fa-comments" />
           </Link>
           {comments_count}
+            {is_owner ? (
+                <OverlayTrigger placement="top" overlay={<Tooltip>You cannot save as favorite your own post!</Tooltip>}>
+                    <i className="far fa-bookmark" />
+                </OverlayTrigger>
+            ) : favorites_id ? (
+                <span onClick={handleNofavorites}>
+                    <i className={`fas fa-bookmark ${styles.Heart}`} />
+                </span>
+            ) : currentUser ? (
+                <span onClick={handleFavorites}>
+                    <i className={`far fa-bookmark ${styles.HeartOutline}`} />
+                </span>
+            ) : (
+                <OverlayTrigger placement="top" overlay={<Tooltip>You must be signed in to save as favorite!</Tooltip>}>
+                    <i className="far fa-bookmark" />
+                </OverlayTrigger>
+            )}
         </div>
       </Card.Body>
     </Card>
