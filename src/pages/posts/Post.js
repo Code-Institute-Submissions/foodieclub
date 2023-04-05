@@ -16,7 +16,7 @@ const Post = (props) => {
     comments_count,
     likes_count,
     like_id,
-    favorites_id,
+    favorite_id,
     title,
     content,
     image,
@@ -81,7 +81,7 @@ const Post = (props) => {
         ...prevPosts,
         results: prevPosts.results.map((post) => {
           return post.id === id
-            ? { ...post, favorites_id: data.id }
+            ? { ...post, favorite_id: data.id }
             : post;
         }),
       }));
@@ -92,12 +92,12 @@ const Post = (props) => {
 
   const handleNofavorite = async () => {
     try {
-      await axiosRes.delete(`/favorites/${favorites_id}`);
+      await axiosRes.delete(`/favorites/${favorite_id}`);
       setPosts((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
           return post.id === id
-            ? { ...post, favorites_id: null }
+            ? { ...post, favorite_id: null }
             : post;
         }),
       }));
@@ -170,7 +170,7 @@ const Post = (props) => {
             >
               <i className="far fa-bookmark" />
             </OverlayTrigger>
-          ) : favorites_id ? (
+          ) : favorite_id ? (
             <span onClick={handleNofavorite}>
               <i className={`fas fa-bookmark ${styles.Heart}`} />
             </span>
