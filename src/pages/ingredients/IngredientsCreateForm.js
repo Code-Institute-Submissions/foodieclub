@@ -7,7 +7,7 @@ import { axiosRes } from "../../api/axiosDefaults";
 import useAlert from "../../hooks/useAlert";
 
 function IngredientsCreateForm(props) {
-  const { post, setIngredients } = props;
+  const { post, setIngredients, owner } = props;
   const [ingredient, setIngredient] = useState("");
   const [method, setMethod] = useState("");
   const { setAlert } = useAlert();
@@ -24,22 +24,17 @@ function IngredientsCreateForm(props) {
     event.preventDefault();
     try {
       const { data } = await axiosRes.post("/ingredients/", {
-        ingredient,
+        recipe: ingredient,
         method,
         post,
+        owner
       });
-      setIngredients((prevIngredients) => ({
+
+      setIngredients((prevIngredients) => ([
         ...prevIngredients,
-        results: [data, ...prevIngredients.results],
-      }));
-      setIngredients((prevIngredients) => ({
-        results: [
-          {
-            ...prevIngredients.results[0],
-            ingredients_count: prevIngredients.results[0].ingredients_count + 1,
-          },
-        ],
-      }));
+        data
+      ]));
+      
       setAlert("Recipe uploaded!", "Let's cook!");
     } catch (err) {
       // console.log(err);

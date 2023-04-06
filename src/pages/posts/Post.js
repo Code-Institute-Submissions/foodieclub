@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
@@ -6,6 +6,7 @@ import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/MoreDropdown";
+import Ingredients from "../ingredients/Ingredients";
 
 const Post = (props) => {
   const {
@@ -28,6 +29,7 @@ const Post = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
+  const [ingredientsVisible, setIngredientsVisible] = useState(false)
 
   const handleEdit = () => {
     history.push(`/posts/${id}/edit`);
@@ -156,7 +158,7 @@ const Post = (props) => {
             </OverlayTrigger>
           )}
           {likes_count}
-          <Link to={`/posts/${id}`}>
+          <Link to={`/posts/${id}`} onClick={() => setIngredientsVisible(true)}>
             <i className="fa-solid fa-fire-burner" />
           </Link>
           <Link to={`/posts/${id}`}>
@@ -188,6 +190,12 @@ const Post = (props) => {
             )}
         </div>
       </Card.Body>
+      {ingredientsVisible && (<Card.Body>
+        <div>
+        <Ingredients postId={id} owner={owner} />
+        <button onClick={() => setIngredientsVisible(false)} >Close!</button>
+        </div>
+      </Card.Body>)}
     </Card>
   );
 };

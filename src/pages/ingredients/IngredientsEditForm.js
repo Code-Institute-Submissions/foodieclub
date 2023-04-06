@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { FormGroup } from "@mui/material";
 
 import Form from "react-bootstrap/Form";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -8,14 +7,14 @@ import styles from "../../styles/IngredientsCreateEditForm.module.css";
 import useAlert from "../../hooks/useAlert";
 
 function IngredientsEditForm(props) {
-  const { id, ingredient, method, setShowEditForm, setIngredients } = props;
+  const { ingredient, setShowEditForm, setIngredients } = props;
 
-  const [formIngredient, setFormIngredient] = useState(ingredient);
-  const [formMethod, setFormMethod] = useState(method);
+  const [formRecipe, setFormRecipe] = useState(ingredient.recipe);
+  const [formMethod, setFormMethod] = useState(ingredient.method);
   const { setAlert } = useAlert();
 
   const handleIngredient = (event) => {
-    setFormIngredient(event.target.value);
+    setFormRecipe(event.target.value);
   };
 
   const handleMethod = (event) => {
@@ -25,23 +24,23 @@ function IngredientsEditForm(props) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axiosRes.put(`/ingredients/${id}/`, {
-        ingredient: formIngredient.trim(),
+      await axiosRes.put(`/ingredients/${ingredient.id}/`, {
+        recipe: formRecipe.trim(),
         method: formMethod.trim(),
       });
-      setIngredients((prevIngredients) => ({
-        ...prevIngredients,
-        results: prevIngredients.results.map((ingredient) => {
-          return ingredient.id === id
+
+      setIngredients((prevIngredients) => 
+        prevIngredients.map((ing) => {
+          return ing.id === ingredient.id
             ? {
-                ...ingredient,
-                ingredient: formIngredient.trim(),
+                ...ing,
+                recipe: formRecipe.trim(),
                 method: formMethod.trim(),
                 updated_at: "now",
               }
-            : ingredient;
-        }),
-      }));
+            : ing;
+        }));
+
       setShowEditForm(false);
       setAlert("Recipe edited!", "Let's cook!");
     } catch (err) {
@@ -57,7 +56,7 @@ function IngredientsEditForm(props) {
           className={styles.Form}
           as="textarea"
           name="ingredient"
-          value={formIngredient}
+          value={formRecipe}
           onChange={handleIngredient}
           rows={4}
         />
@@ -82,7 +81,7 @@ function IngredientsEditForm(props) {
         </button>
         <button
           className={styles.Button}
-          disabled={!formIngredient.trim()}
+          disabled={!formRecipe.trim()}
           type="submit"
         >
           save
