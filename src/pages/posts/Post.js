@@ -156,7 +156,11 @@ const Post = (props) => {
           {likes_count}
           <OverlayTrigger
             placement="top"
-            overlay={<Tooltip>Log in and click here to Add/Edit or View recipe!</Tooltip>}
+            overlay={
+              <Tooltip>
+                Log in and click here to Add/Edit or View recipe!
+              </Tooltip>
+            }
           >
             <Link
               to={`/posts/${id}`}
