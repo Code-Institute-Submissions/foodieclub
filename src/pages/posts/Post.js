@@ -157,10 +157,13 @@ const Post = (props) => {
           <OverlayTrigger
             placement="top"
             overlay={<Tooltip>Log in to Add or Edit recipe!</Tooltip>}
-           >
-          <Link to={`/posts/${id}`} onClick={() => setIngredientsVisible(true)}>
-            <i className="fa-solid fa-fire-burner" />
-          </Link>
+          >
+            <Link
+              to={`/posts/${id}`}
+              onClick={() => setIngredientsVisible(true)}
+            >
+              <i className="fa-solid fa-fire-burner" />
+            </Link>
           </OverlayTrigger>
           <Link to={`/posts/${id}`}>
             <i className="far fa-comments" />
