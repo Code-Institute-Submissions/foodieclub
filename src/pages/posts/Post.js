@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
@@ -29,7 +29,7 @@ const Post = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
-  const [ingredientsVisible, setIngredientsVisible] = useState(false)
+  const [ingredientsVisible, setIngredientsVisible] = useState(false);
 
   const handleEdit = () => {
     history.push(`/posts/${id}/edit`);
@@ -78,13 +78,11 @@ const Post = (props) => {
 
   const handleFavorite = async () => {
     try {
-      const { data } = await axiosRes.post('/favorites/', { post: id });
+      const { data } = await axiosRes.post("/favorites/", { post: id });
       setPosts((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
-          return post.id === id
-            ? { ...post, favorite_id: data.id }
-            : post;
+          return post.id === id ? { ...post, favorite_id: data.id } : post;
         }),
       }));
     } catch (err) {
@@ -98,15 +96,13 @@ const Post = (props) => {
       setPosts((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
-          return post.id === id
-            ? { ...post, favorite_id: null }
-            : post;
+          return post.id === id ? { ...post, favorite_id: null } : post;
         }),
       }));
     } catch (err) {
       // console.log(err)
     }
-  }
+  };
 
   return (
     <Card className={styles.Post}>
@@ -166,9 +162,11 @@ const Post = (props) => {
           </Link>
           {comments_count}
           {is_owner ? (
-            <OverlayTrigger 
-              placement="top" 
-              overlay={<Tooltip>You can't save as favorite your own post!</Tooltip>}
+            <OverlayTrigger
+              placement="top"
+              overlay={
+                <Tooltip>You can't save as favorite your own post!</Tooltip>
+              }
             >
               <i className="far fa-bookmark" />
             </OverlayTrigger>
@@ -182,20 +180,24 @@ const Post = (props) => {
             </span>
           ) : (
             <OverlayTrigger
-             placement="top" 
-             overlay={<Tooltip>You must be signed in to save as favorite!</Tooltip>}
+              placement="top"
+              overlay={
+                <Tooltip>You must be signed in to save as favorite!</Tooltip>
+              }
             >
               <i className="far fa-bookmark" />
             </OverlayTrigger>
-            )}
+          )}
         </div>
       </Card.Body>
-      {ingredientsVisible && (<Card.Body>
-        <div>
-        <Ingredients postId={id} owner={owner} />
-        <button onClick={() => setIngredientsVisible(false)} >Close!</button>
-        </div>
-      </Card.Body>)}
+      {ingredientsVisible && (
+        <Card.Body>
+          <div>
+            <Ingredients postId={id} owner={owner} />
+            <button onClick={() => setIngredientsVisible(false)}>Close!</button>
+          </div>
+        </Card.Body>
+      )}
     </Card>
   );
 };

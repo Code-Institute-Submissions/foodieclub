@@ -29,7 +29,7 @@ function IngredientsEditForm(props) {
         method: formMethod.trim(),
       });
 
-      setIngredients((prevIngredients) => 
+      setIngredients((prevIngredients) =>
         prevIngredients.map((ing) => {
           return ing.id === ingredient.id
             ? {
@@ -39,7 +39,8 @@ function IngredientsEditForm(props) {
                 updated_at: "now",
               }
             : ing;
-        }));
+        })
+      );
 
       setShowEditForm(false);
       setAlert("Recipe edited!", "Let's cook!");

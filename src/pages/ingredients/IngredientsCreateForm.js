@@ -27,14 +27,11 @@ function IngredientsCreateForm(props) {
         recipe: ingredient,
         method,
         post,
-        owner
+        owner,
       });
 
-      setIngredients((prevIngredients) => ([
-        ...prevIngredients,
-        data
-      ]));
-      
+      setIngredients((prevIngredients) => [...prevIngredients, data]);
+
       setAlert("Recipe uploaded!", "Let's cook!");
     } catch (err) {
       // console.log(err);

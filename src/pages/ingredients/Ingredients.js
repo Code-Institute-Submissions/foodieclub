@@ -17,15 +17,17 @@ const Ingredients = (props) => {
       const response = await axiosRes.get(`/ingredients`);
 
       if (response.data.results.length) {
-        setIngredients(response.data.results.filter(
-          ingredient => ingredient.post === postId)
+        setIngredients(
+          response.data.results.filter(
+            (ingredient) => ingredient.post === postId
+          )
         );
       }
-    }
+    };
 
-    fetchData()
-  }, [postId, setIngredients])
- 
+    fetchData();
+  }, [postId, setIngredients]);
+
   const [showEditForm, setShowEditForm] = useState(false);
 
   const currentUser = useCurrentUser();
@@ -35,7 +37,9 @@ const Ingredients = (props) => {
   const handleDelete = async (ingredientId) => {
     try {
       await axiosRes.delete(`/ingredients/${ingredientId}/`);
-      setIngredients((prevIngredients) => prevIngredients.filter(i => i.id !== ingredientId));
+      setIngredients((prevIngredients) =>
+        prevIngredients.filter((i) => i.id !== ingredientId)
+      );
       setAlert("Recipe deleted!", "Let's upload a new one!");
     } catch (err) {
       setAlert(err.message, "error");
@@ -44,33 +48,29 @@ const Ingredients = (props) => {
 
   return (
     <>
-      {ingredients.map(ingredient => (
+      {ingredients.map((ingredient) => (
         <Fragment key={ingredient.id}>
           <hr />
           <Media>
             <Media.Body className="align-self-center ml-2">
-            {is_owner && showEditForm ? (
-              <IngredientsEditForm
-                ingredient={ingredient}
-                setIngredients={setIngredients}
-                setShowEditForm={setShowEditForm}
-              />
-            ) : (
-              <>
-                <div className={styles.IngredientsDiv}>
-                  <h5 className={styles.IngredientsTitle}>
-                    Ingredients
-                  </h5>
-                  <p className={styles.CssFix}>{ingredient.recipe}</p>
-                </div>
-                <div className={styles.IngredientsDiv}>
-                  <h5 className={styles.IngredientsTitle}>
-                    Method
-                  </h5>
-                  <p className={styles.CssFix}>{ingredient.method}</p>
-                </div>
-              </>
-            )}
+              {is_owner && showEditForm ? (
+                <IngredientsEditForm
+                  ingredient={ingredient}
+                  setIngredients={setIngredients}
+                  setShowEditForm={setShowEditForm}
+                />
+              ) : (
+                <>
+                  <div className={styles.IngredientsDiv}>
+                    <h5 className={styles.IngredientsTitle}>Ingredients</h5>
+                    <p className={styles.CssFix}>{ingredient.recipe}</p>
+                  </div>
+                  <div className={styles.IngredientsDiv}>
+                    <h5 className={styles.IngredientsTitle}>Method</h5>
+                    <p className={styles.CssFix}>{ingredient.method}</p>
+                  </div>
+                </>
+              )}
             </Media.Body>
             {is_owner && !showEditForm && (
               <MoreDropdown
@@ -80,11 +80,14 @@ const Ingredients = (props) => {
             )}
           </Media>
         </Fragment>
-        
       ))}
       {is_owner && (
-        <IngredientsCreateForm post={postId} owner={owner} setIngredients={setIngredients} />
-      )} 
+        <IngredientsCreateForm
+          post={postId}
+          owner={owner}
+          setIngredients={setIngredients}
+        />
+      )}
     </>
   );
 };
