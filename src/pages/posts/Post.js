@@ -156,7 +156,7 @@ const Post = (props) => {
           {likes_count}
           <OverlayTrigger
             placement="top"
-            overlay={<Tooltip>Log in to Add or Edit recipe!</Tooltip>}
+            overlay={<Tooltip>Log in and click here to Add/Edit or View recipe!</Tooltip>}
           >
             <Link
               to={`/posts/${id}`}
@@ -202,7 +202,7 @@ const Post = (props) => {
         <Card.Body>
           <div>
             <Ingredients postId={id} owner={owner} />
-            <button onClick={() => setIngredientsVisible(false)}>Close!</button>
+            <button onClick={() => setIngredientsVisible(false)}>Close</button>
           </div>
         </Card.Body>
       )}
