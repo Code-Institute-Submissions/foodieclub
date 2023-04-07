@@ -95,39 +95,79 @@ The principles of agile methodology were utilized during the project. By assigni
 
     * ## Languages
 
-        * [JavaScript](https://www.python.org/)
-        * [HTML5](https://www.python.org/)
-        * [CSS3](https://www.python.org/)
+        * [JavaScript](https://www.javascript.com/)
+        * [HTML5](https://en.wikipedia.org/wiki/HTML/)
+        * [CSS3](https://en.wikipedia.org/wiki/CSS)
 
-    * ## Libraries/Framework
+    * ## React Dependencies
 
-        * [React](https://www.djangoproject.com/) - Advanced front-end JavaScript library for building user interfaces
-        * [Bootstrap](https://www.django-rest-framework.org/) - Popular CSS Framework for developing responsive and mobile-first websites
-        * [Font Awesome](https://www.django-rest-framework.org/) - A font and icon toolkit based on CSS
-        * [Google Fonts](https://www.django-rest-framework.org/) - A library of 1482 open source font families and APIs for convenient use via CSS
+        * [NPM](https://www.npmjs.com/package/node)<br>
+          Package manager used to install dependencies.
+        * [React Bootstrap](https://react-bootstrap.github.io/)<br>
+          Was used to style the website, add responsiveness and interactivity.
+        * [Axios](https://axios-http.com/docs/intro)<br>
+          As the HTTP client for the app.
+        * [JWT Decode](https://www.npmjs.com/package/jwt-decode)<br>
+          To help decoding JWTs token which are Base64Url encoded.
+        * [react-infinite-scroll-component](https://www.npmjs.com/package/react-infinite-scroll-component)
+          A component to make the post load as an infinite scroll.
+        * [react-router-dom](https://www.npmjs.com/package/react-router-dom)<br>
+          Bindings for using React Router in web applications.
+        * [ESLint](https://eslint.org/)<br>
+          ESLint was used to evaluate all the React.js code.
+        * [Prettier](https://prettier.io/docs/en/index.html)<br>
+          Prettier was used to enforce a consistent code style across my entire work
 
-    * ### Libraries/Module Installed
+    * ## Frameworks - Libraries - Programs Used
 
-        * 
-        * 
-        * 
-        * 
-        * 
-        * 
-        * 
+        * [React](https://reactjs.org/)<br>
+          Advanced front-end JavaScript library for building user interfaces
+        * [Bootstrap](https://react-bootstrap.github.io/)<br> 
+          Popular CSS Framework for developing responsive and mobile-first websites
+        * [Font Awesome](https://fontawesome.com/)<br>
+          A font and icon toolkit based on CSS
+        * [Google Fonts](https://www.django-rest-framework.org/)<br>
+          A library of 1482 open source font families and APIs for convenient use via CSS
+        * [ElephantSQL](https://www.elephantsql.com/)<br>
+          ElephantSQL is a PostgreSQL database hosting service were the database for foodSNAP was created
+        * [Git](https://git-scm.com/)<br>
+          Git was used for version control by utilizing the Gitpod terminal to commit to Git and push to GitHub
+        * [GitHub](https://github.com/)<br>
+          GitHub is used to store the project's code after being pushed from Git
+        * [Heroku](https://id.heroku.com)<br>
+          Heroku was used to deploy the live project
+        * [W3C - HTML](https://validator.w3.org/)<br>
+          W3C- HTML was used to validate all the HTML code
+        * [W3C - CSS](https://jigsaw.w3.org/css-validator/)<br>
+          W3C - CSS was used to validate the CSS code
+        * [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)<br>
+          To check App responsiveness and debugging
+        * [Figma](https://www.figma.com/)<br>
+          To build the logo and icon for the project
 
     * ## Other Technologies
 
         * [Stackoverflow](https://stackoverflow.com/)
-        * [Git](https://git-scm.com/)
-        * [Github](https://github.com/)
-        * [Gitpod workspace](https://gitpod.io/workspaces)
-        * [Heroku](https://dashboard.heroku.com/apps)
         * [Flowchart](https://lucid.app/documents#/documents?folder_id=home)
         * [Cloudinary](https://cloudinary.com/)
-        * [ElephantSQL](https://www.elephantsql.com/)
-        * [CI Python Linter](https://pep8ci.herokuapp.com/)
         * [Slack](https://slack.com/intl/en-gb/)
+
+[Back to top](<#contents>)
+
+* # Development
+
+    * ## Custom Components
+
+        * Asset.js was created to display a spinner when data is being fetched to notify the user that an action is being performed.
+        * Avatar.js was created to display the users profile image throughout the app.
+        * DropdownOptions was created to display options to the user in a responsive way, such as the option to either edit or delete a post.
+        * NavBar.js was created to display the navigation menu and display different options to the user depending on authentication.
+        * NotFound.js as created to display a message to the user if the content they are looking for does not exist.
+
+    * ## Custom Context
+
+        * CurrentUserContext.js was created to get the current users authentication state, check if the user needs to sign up and also to redirect the user to the signin page if not signed in.
+        * ProfileDataContext.js was created to setProfileData, handleFollow, handleUnfollow of user profiles and access this data throughout the app.
 
 [Back to top](<#contents>)
 
