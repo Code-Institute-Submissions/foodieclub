@@ -23,11 +23,11 @@ The repository for the frontend application can be found here:  <a href="https:/
 * [Flowchart](<#flowchart>)
 * [Agile Methodology](#agile-methodology)
 * [User Stories](#user-stories)
-* [Design](#user-stories)
-* [Features](#user-stories)
-* [Future Features](#user-stories)
+* [Design](#design)
+* [Features](#features)
+* [Future Features](#future-features)
 * [Technologies Used](#technologies-used)
-* [Development](#technologies-used)
+* [Development](#development)
 * [Testing](<#testing>)
   * [Bugs Fixed](./docs/testing.md#bugs-fixed)
 * [Deployment](#deployment)
@@ -88,6 +88,18 @@ The principles of agile methodology were utilized during the project. By assigni
         - As a user I can view all the posts by a specific user so that I can catch up on their latest posts, or decide I want to follow them
         - As a logged in user I can edit my profile so that I can change my profile picture and bio
         - As a logged in user I can update my username and password so that I can change my display name and keep my profile secure
+
+[Back to top](<#contents>)
+
+## Design
+
+[Back to top](<#contents>)
+
+## Features
+
+[Back to top](<#contents>)
+
+## Future Features
 
 [Back to top](<#contents>)
 
@@ -179,11 +191,29 @@ I have included testing details in a separate document called [Testing.md](./doc
 
 ## Deployment
 
-Git and GitHub are used for version control. React.js is the frontend language, and can't be displayed with GitHub alone, To live preview my project, I used Heroku.
+This project was created on GitHub and edited in GitPod by carrying out the following:
+
+* A new repository was created without a template
+* Name you new repository as per your project name and select 'Create Repository'
+* I opened the repository on GitHub then clicked the 'Gitpod' button to build the GitPod workspace which would allow me to build and edit the code used to make my app.
+* Version control was used throughout the project using the following commands in the terminal using Bash
+* git add . or git add "file name" - to stage the changes and get them ready for being committed to the local repo.
+* git commit -m "Description of the update" - to save the change and commit the change to the local repo
+* git push - to push all committed changes to the GitHub
+* commit --amend - for changing the wording or spelling of the most recent commit
+* git reset "commit hash"
+* git config pill.rebase true > git pull > git push was used when I could not push my code due an error, this put changes to one side, pull the code from Github, and then reapply my changes on top.
 
 ## Deployment to Heroku
 
-### 1. Create your Heroku app
+Some of the deployment steps below are specifically required for this project and may not be applicable to older versions, or different projects.
+
+Before deploying to Heroku I created the Procfile with web: serve -s build
+
+This project was deployed to Heroku using the following steps:
+
+## Create your Heroku app
+
 * Navigate to the Heroku website
 * Create a Heroku account by entering your email address and a password (or login if you have one already).
 * Activate the account through the authentication email sent to your email account
@@ -191,37 +221,67 @@ Git and GitHub are used for version control. React.js is the frontend language, 
 * Enter a unique name for the application.
 * Select the appropriate region for the application.
 * Click create app
-* In the Heroku dashboard click on the Resources tab
-* Scroll down to Add-Ons, search for and select 'Heroku Postgres' / Now replaced by 'ElephantSQL'
-* In the Settings tab, scroll down to 'Reveal Config Vars' and add the `DATABASE_URL` as key, the value should be the ElephantSQL database url you just copied.
+* Navigate to the deployment tab of your new app, look for Deployment method' section select 'Github' and click the 'connect to Github' button to confirm.
+* In the 'search' box enter the Github repository name for the project
+* Click search and then click connect to link the heroku app with the Github backend repository. The box will confirm that heroku is connected to the repository.
+* In 'manual deploy' section, click 'deploy branch'
+* Once the build log is finished it will show open app button, click there to see deployed app.
 
-### 3. Heroku Final Deployment
+### Forking the GitHub repo
 
-1. In the 'Deployment method' section select 'Github' and click the 'connect to Github' button to confirm.
-2. In the 'search' box enter the Github repository name for the project
-3. Click search and then click connect to link the heroku app with the Github backend repository. The box will confirm that heroku is connected to the repository.
-4. In 'manual deploy' section, click 'deploy branch'
-5. Once the build log is finished it will show open app button, click there to see deployed app.
+If you want to make changes to the repo without affecting it, you can make a copy of it by 'Forking' it. This will make sure that the original repo remains unchanged.
+
+<ol>
+    <li>Log in to your GitHub account</li>
+    <li>Navigate to the repository <a href="https://github.com/henryl74/foodieclub" target="_blank"><strong>here</strong></a></li>
+    <li>Select the 'Fork' button in the top right corner of the page (under your account image)</li>
+    <li>The repo has now been copied into your own repos and you can work on it in your chosen IDE</li>
+    <li>If you have any suggestions to make regards to the code to make the site better, you can put in a pull request</li>
+</ol>
+
+### Cloning the repo with GitPod
+
+<ol>
+    <li>Log in to your GitHub account</li>
+    <li>Navigate to the Repository <a href="https://github.com/henryl74/foodieclub" target="_blank"><strong>here</strong></a></li>
+    <li>Select the 'Code' button above the file list on the right had side</li>
+    <li>Ensure HTTPS is selected and click the clipboard on the right of the URL to copy it</li>
+    <li>Open a new workspace in GitPod</li>
+    <li>In the bash terminal type 'git clone [copy url here from step 4]'</li>
+    <li>Press enter - the IDE will clone and download the repo</li>
+</ol>
+
+### Download and extract the zip directly from GitHub
+
+<ol>
+    <li>Log in to your GitHub account</li>
+    <li>Navigate to the Repository <a href="https://github.com/henryl74/foodieclub" target="_blank"><strong>here</strong></a></li>
+    <li>Select the 'Code' button above the file list on the right had side</li>
+    <li>Select 'Download Zip'</li>
+    <li>Once you have the Zip downloaded, open it with your prefered file decompression software</li>
+    <li>You can then drag and drop the files from the folder into your chosen IDE or view/edit them on your local machine</li>
+    <li>If you want to create a web-app from the repo please follow the instructions in "Project Deployment"</li>
+</ol>
 
 [Back to top](<#contents>)
 
 ## Credits
 
-- [Code Institute walkthrough](https://codeinstitute.net/) as inspiration and code examples, the code institute walkthroughs "Django REST Framework" was referenced during the development cycle of this API.
+- [Code Institute walkthrough](https://codeinstitute.net/) as inspiration and code examples, the code institute walkthroughs "Moments" was referenced during the development cycle of this app.
 
-- [Django Documenation](https://www.djangoproject.com/) was used to provide examples of code solutions and Django functionality.
+- [JSX In Depth](https://legacy.reactjs.org/docs/jsx-in-depth.html)
 
-- [Django YouTube Tutorial on how to create a Blog](https://www.youtube.com/watch?v=n-FTlQ7Djqc&list=PL4cUxeGkcC9ib4HsrXEYpQnTOTZE1x0uc)
+- [React](https://react.dev/) The library for web and native user interfaces.
 
-- [Python Django Web Framework - Full Course for Beginners](https://www.youtube.com/watch?v=F5mRW0jo-U4)
+- [React Bootstrap](https://react-bootstrap.github.io/) the most popular front-end framework rebuilt for React.
 
-- [Python Django 7 Hour Course](https://www.youtube.com/watch?v=PtQiiknWUcI)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 
 - [Stackoverflow](https://stackoverflow.com/)
 
 - [Slack](https://slack.com/intl/en-gb/) community support.
 
-- Code Institute - Tutor Assistance, BIG THANK YOU for all your support, suggestions and help!
+- Code Institute - Tutor Assistance, **BIG THANK YOU** for all your support, suggestions and help!
 
 
 [Back to top](<#contents>)
@@ -233,7 +293,8 @@ Git and GitHub are used for version control. React.js is the frontend language, 
 - All my classmates for constantly sharing new ideas in our dedicated slack channel.
 - Stack Overflow question and answer website.
 - My mentor for this project Marcel Mulders, thank you for all your all your guidance and support given, I learned a lot throughout our sessions.
-- My family, THANK YOU for being always part of the team and this journey.
-- Last but not least Code Institute student support team, for being there for us.
+- My partner and my daughter, **THANK YOU** for all the support; and for being part of this journey.
+- Code Institute student support team, for being there for us.
+- **Thank you so much** for such a rewarding experience [Code Institute!](https://codeinstitute.net/)
 
 [Back to top](<#contents>)
