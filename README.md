@@ -4,7 +4,7 @@ foodieClub project portfolio has been created for educational purposes only as t
 
 Using the principles of UX design and the agile development methodology, this project was developed using React that handles all the frontend functionality including user profiles, posts, comments, likes, bookmark posts, add recipes to posts, followers, authentication, authorization and more.
 
-foodieClub is an application where users can create their own online posts about their favorite food, there a funtionality to add recipes to the post while also being able to see the posts and recipes of other users. Via commenting and likes the users can engage with each other and share their recommendations.
+foodieClub is an application where users can create online posts about their favorite food, with functionalities to add recipes, like, leave comments, and bookmark favorite posts; while also being able to see different posts and recipes from other users. Through these functionalities, they will be able to engage with the App community.
 
 Please note, this project is fairly similar to the walkthrough project Moments of Code Institute as I used that as baseline due the complextity of this new front-end library. I have tried to customize this project as much as possible within the timeline I had.
 
