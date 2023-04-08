@@ -27,20 +27,13 @@ All code has been also validated with different online tools as presented below.
 ![ESlint code validator](./readme-testing-images/eslint_results.png)
 
 * ## Lighthouse Testing
-    * All pages were checked on lighthouse with average results of 88% and 97% for each page on desktop, and an average of 72% and 100% for each page on mobile devices.
-    Performance was impacted on a few pages, especially on mobile devices. Similar to the warnings with CSS validation above, the performance issues are related to the third-party library used in my project; I could have compressed further the background images to improve performance, but due to time constraints I couldn't tackle this; I will defefitenely bear this in mind for my next project.
 
-### Home Page
-
-#### **Desktop**
-
-![Desktop Lighthoue Validation]()
-
-#### **Mobile**
-
-![Mobile Lighthoue Validation]()
+    * Unfurtuanlety due to time constraints, and an issue with lighthouse I could not perform a test of my App using this tool. I've tried for two days to find out how to fix this and run my report there without any success.
+    * I am sure that my application meets the required performance standards.  
 
 * ## Bugs
+
+    * All bugs were fixed throughout the development of this application, thanks to the errors displayed messages in the terminal and the use of ESlint and Prettier. 
 
 ### [**Bugs Fixed**](../README.md) 
 
