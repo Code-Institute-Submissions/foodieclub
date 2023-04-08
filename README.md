@@ -10,7 +10,7 @@ Please note, this project is fairly similar to the walkthrough project Moments o
 
 # Preview
 
-![foodieClub Logo](./docs/readme-testing-images/foodieclub.png)
+![foodieClub](./docs/readme-testing-images/foodieclub.png)
 
 You can view the live deployed backend here: <a href="https://foodieclub-drf-api.herokuapp.com/" target="_blank"> foodieClub DRF-API </a>
 
@@ -20,7 +20,6 @@ The repository for the frontend application can be found here:  <a href="https:/
 
 # Contents
 
-* [Flowchart](<#flowchart>)
 * [Agile Methodology](#agile-methodology)
 * [User Stories](#user-stories)
 * [Design](#design)
@@ -34,15 +33,6 @@ The repository for the frontend application can be found here:  <a href="https:/
 * [Credits](<#credits>)
 * [Acknowledgements](<#acknowledgements>)
 
-# Flowchart
-
-Flowchart was created before I created the project, which gave me an idea of which user has access to which page and what each link should be doing.
-
-To accomplish this I used [LucidChart](https://lucid.co/).
-
-![foodieClub Flowchart]()
-
-[Back to top](<#contents>)
 
 ## Agile Methodology
 
