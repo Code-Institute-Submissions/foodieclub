@@ -40,6 +40,10 @@ All code has been also validated with different online tools as presented below.
 
 ![Mobile Lighthoue Validation]()
 
+* ## Bugs
+
+### [**Bugs Fixed**](../README.md) 
+
 * ## Manual Testing
 
     * In addition to the other tests, I have conducted a manual check list for myself to carry out to make sure that everything is working as intended.
@@ -65,3 +69,5 @@ All code has been also validated with different online tools as presented below.
 | &check; | Clicking the Profile tab on the navbar loads the profile page
 | &check; | Tested all functionalities for editing, changes, password update to a profile, add/edit/delete a post, like/unlike a post, save/unsave a post, add/edit/delete a recipe to a post, add/edit/delete comments from a post and search bar were exhaustively tested
 | &check; | Clicking the Sign out tab on the navbar will end my online session
+
+[Back to top](<#testing>)
