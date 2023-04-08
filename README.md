@@ -16,7 +16,7 @@ You can view the live deployed backend here: <a href="https://foodieclub-drf-api
 
 You can view the live site here: <a href="https://foodieclub.herokuapp.com/" target="_blank"> foodieClub App </a>
 
-The repository for the frontend application can be found here:  <a href="https://github.com/henryl74/foodieclub" target="_blank"> foodieClub React </a>
+The repository for the backend application can be found here:  <a href="https://github.com/henryl74/foodieClub-drf-api" target="_blank"> foodieClub DRF-API </a>
 
 # Contents
 
