@@ -93,13 +93,79 @@ The principles of agile methodology were utilized during the project. By assigni
 
 ## Design
 
+The theme for the project was chosen as per the intended target market in mind for the restaurant. It primarily focuses on attracting families, young people, residents from the area, and visitors to this region.
+    
+- Colors  
+The main colors are overall cream-pastel, it blends well with the main product that this restaurant has to offer; the best coffe in town.
+- Font  
+The fonts in the theme are clear and modern and contribute perfectly to the overall look of the site.  
+- Images  
+The images in the theme provide great content to the site; as the user navigates through the pages; it reasures him the type of products that are being served.
+
 [Back to top](<#contents>)
 
 ## Features
 
+My project consists of nine webpages:
+
+- Home or landing page.
+- Menu page.
+- Reservation page.
+- Register page.
+- Login page.
+- Book a Table (Reservation Page).
+- Booking confirmation page.
+- My Bookings page.
+- Logout page.
+
+### The Navigation Bar
+
+- The navigation bar shows all the sections that the user can enter and provides a quick and easy means of navigating the site.
+- The navigation bar is very responsive and user friendly, it has an additional hover effect to help the user with his selection.
+- The restaurant logo located on the the left hand corner of the navigation bar, helps the user to go back to the home page by clicking on it.
+
+![Navbar](./docs/readme-testing-images/navigation_bar.jpeg)
+
+### Home or landing page
+
+- The home section makes the first impression of the site to the visitor. The main background image gives a primary idea to the user of what products are sold here, and how they are prepared; it also displays the main contact details of the restaurant located at the bottom of the page as footer.
+
+![Navbar](./docs/readme-testing-images/home_page.jpeg)
+
+### Menu page
+
+- The menu section comes with images and descriptions of a few different options available at this restaurant, it also displays the main contact details of the restaurant located at the bottom of the page as footer.
+
+![Menu](./docs/readme-testing-images/menu_page.jpeg)
+
+### Reservation Page
+
+- On the booking page the customer it's prompted to login to continue with the online booking.
+
+![Reservations](./docs/readme-testing-images/reservation_page.jpeg)
+
+#### Register page
+
+- In this section, the user can create an account to make a registration as well as click on the log-in link to be able to access the site as a new or existing user.  
+
+![Register](./docs/readme-testing-images/register_page.jpeg)
+
+### Login page
+
+- The user can access the site as a registered user to proceed with his/her online booking.  
+
+![Login](./docs/readme-testing-images/login_page.jpeg)
+
 [Back to top](<#contents>)
 
 ## Future Features
+
+Due to time constraints, the following features will be considered for future implementation on a separate project:
+
+- Blog
+- Gallery
+- Recipe videos 
+- Newsletter Sign up
 
 [Back to top](<#contents>)
 
@@ -128,7 +194,7 @@ The principles of agile methodology were utilized during the project. By assigni
         * [ESLint](https://eslint.org/)<br>
           ESLint was used to evaluate all the React.js code.
         * [Prettier](https://prettier.io/docs/en/index.html)<br>
-          Prettier was used to enforce a consistent code style across my entire work
+          Prettier was used to enforce a consistent code style across my entire work.
 
     * ## Frameworks - Libraries - Programs Used
 
